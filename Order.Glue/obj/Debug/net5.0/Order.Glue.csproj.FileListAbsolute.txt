@@ -1,0 +1,12 @@
+E:\RekorOrder\Order.Glue\bin\Debug\net5.0\Order.Glue.deps.json
+E:\RekorOrder\Order.Glue\bin\Debug\net5.0\Order.Glue.dll
+E:\RekorOrder\Order.Glue\bin\Debug\net5.0\ref\Order.Glue.dll
+E:\RekorOrder\Order.Glue\bin\Debug\net5.0\Order.Glue.pdb
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.csproj.AssemblyReference.cache
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.GeneratedMSBuildEditorConfig.editorconfig
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.AssemblyInfoInputs.cache
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.AssemblyInfo.cs
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.csproj.CoreCompileInputs.cache
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.dll
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\ref\Order.Glue.dll
+E:\RekorOrder\Order.Glue\obj\Debug\net5.0\Order.Glue.pdb

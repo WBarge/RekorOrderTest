@@ -1,0 +1,12 @@
+E:\RekorOrder\Order.Business\bin\Debug\net5.0\Order.Business.deps.json
+E:\RekorOrder\Order.Business\bin\Debug\net5.0\Order.Business.dll
+E:\RekorOrder\Order.Business\bin\Debug\net5.0\ref\Order.Business.dll
+E:\RekorOrder\Order.Business\bin\Debug\net5.0\Order.Business.pdb
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.csproj.AssemblyReference.cache
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.AssemblyInfoInputs.cache
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.AssemblyInfo.cs
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.csproj.CoreCompileInputs.cache
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.dll
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\ref\Order.Business.dll
+E:\RekorOrder\Order.Business\obj\Debug\net5.0\Order.Business.pdb
