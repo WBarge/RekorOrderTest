@@ -13,13 +13,14 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using Order.Glue.Interfaces.DTOs;
 
 namespace Order.Data.Ef.Entities
 {
     /// <summary>
     /// Class Customer.
     /// </summary>
-    public class Customer
+    public class Customer : ICustomer
     {
         /// <summary>
         /// Gets or sets the customer identifier.

@@ -13,13 +13,14 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using Order.Glue.Interfaces.DTOs;
 
 namespace Order.Data.Ef.Entities
 {
     /// <summary>
     /// Class Product.
     /// </summary>
-    public class Product
+    public class Product : IProduct
     {
         /// <summary>
         /// Gets or sets the product identifier.

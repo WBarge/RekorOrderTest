@@ -10,8 +10,8 @@ using Order.Data.Ef;
 namespace Order.Data.Ef.Migrations
 {
     [DbContext(typeof(OrderDbContext))]
-    [Migration("20220513003117_configured_relationships")]
-    partial class configured_relationships
+    [Migration("20220515140528_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

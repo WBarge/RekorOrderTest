@@ -12,13 +12,13 @@ namespace Order.Data.Ef.Migrations
                 columns: table => new
                 {
                     CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CustomerName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressLine1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressLine2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Zip = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CustomerName = table.Column<string>(type: "nvarchar(255)", nullable: true),
+                    AddressLine1 = table.Column<string>(type: "nvarchar(255)", nullable: true),
+                    AddressLine2 = table.Column<string>(type: "nvarchar(255)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(255)", nullable: true),
+                    State = table.Column<string>(type: "nvarchar(40)", nullable: true),
+                    Zip = table.Column<string>(type: "nvarchar(11)", nullable: true),
+                    Country = table.Column<string>(type: "nvarchar(50)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace Order.Data.Ef.Migrations
                 columns: table => new
                 {
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductName = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     PricePerItem = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     AverageCustomerRating = table.Column<int>(type: "int", nullable: false)
                 },

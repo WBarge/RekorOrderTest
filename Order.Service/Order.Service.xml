@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Order.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Order.Service.Controllers.OrderController">
+            <summary>
+            Class OrderController.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Order.Service.Controllers.OrderController._orderService">
+            <summary>
+            The order service
+            </summary>
+        </member>
+        <member name="M:Order.Service.Controllers.OrderController.#ctor(Order.Glue.Interfaces.Business.IOrderService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Controllers.OrderController"/> class.
+            </summary>
+            <param name="orderService">The order service.</param>
+            <exception cref="T:System.ArgumentNullException">orderService</exception>
+        </member>
+        <member name="M:Order.Service.Controllers.OrderController.PostAsync(Order.Service.Models.Requests.NewOrderRequest)">
+            <summary>
+            Creates a new order in the system
+            </summary>
+            <param name="request">The request.</param>
+            <returns>IActionResult.</returns>
+            <exception cref="T:Order.Glue.Exceptions.RequestException">Quantity has to be a positive number</exception>
+        </member>
+        <member name="T:Order.Service.Middleware.UiExceptionHandler">
+            <summary>
+            Class UiExceptionHandler.
+            This class is responsible for creating a consistent result message to the client in the case of an error (aka a throw)
+            </summary>
+        </member>
+        <member name="F:Order.Service.Middleware.UiExceptionHandler._next">
+            <summary>
+            The next piece in the pipeline
+            </summary>
+        </member>
+        <member name="M:Order.Service.Middleware.UiExceptionHandler.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Middleware.UiExceptionHandler" /> class.
+            </summary>
+            <param name="next">The next.</param>
+        </member>
+        <member name="M:Order.Service.Middleware.UiExceptionHandler.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            called by the system as part of the request pipe-line
+            </summary>
+            <param name="context">The context.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="M:Order.Service.Middleware.UiExceptionHandler.BuildResponseBodyAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            build response body as an asynchronous operation.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="x">The x.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:Order.Service.Middleware.UiExceptionHandlerExtensions">
+            <summary>
+            Class UiExceptionHandlerExtensions.
+            This class is responsible for registering an exception handler in the pipeline
+            </summary>
+        </member>
+        <member name="M:Order.Service.Middleware.UiExceptionHandlerExtensions.UseUIExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Uses the UI exception handler.
+            </summary>
+            <param name="builder">The builder.</param>
+            <returns>IApplicationBuilder.</returns>
+        </member>
+        <member name="T:Order.Service.Models.Responses.ErrorMessageForClient">
+            <summary>
+            Class ErrorMessageForClient.
+            </summary>
+        </member>
+        <member name="P:Order.Service.Models.Responses.ErrorMessageForClient.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.ErrorMessageForClient.ExceptionType">
+            <summary>
+            Gets or sets the type of the exception.
+            </summary>
+            <value>The type of the exception.</value>
+        </member>
+        <member name="M:Order.Service.Models.Responses.ErrorMessageForClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.ErrorMessageForClient" /> class.
+            </summary>
+        </member>
+        <member name="M:Order.Service.Models.Responses.ErrorMessageForClient.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.ErrorMessageForClient" /> class.
+            </summary>
+            <param name="x">The x.</param>
+        </member>
+    </members>
+</doc>
