@@ -60,6 +60,7 @@ namespace Order.Data.Ef
         /// then this method will not be run.</remarks>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             //find all classes that implement IEntityTypeConfiguration and execute their Configure method
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
          

@@ -60,6 +60,7 @@ namespace Order.Service.Controllers
         [ProducesResponseType(typeof(ErrorMessageForClient),StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAsync()
         {
+            //todo - refactor to return a response object
             IEnumerable<IProduct> results = await _productService.GetAllProductsByAverageCustomerRatingAsync();
             return new OkObjectResult(results);
         }
