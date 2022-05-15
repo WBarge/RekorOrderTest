@@ -28,6 +28,12 @@ namespace Order.Glue.Extensions
             return (!obj.IsEmpty());
         }
 
+        /// <summary>
+        /// Requireds the specified name.
+        /// </summary>
+        /// <param name="o">The o.</param>
+        /// <param name="name">The name.</param>
+        /// <exception cref="RequiredObjectException"></exception>
         public static void Required(this Guid o,string name = "")
         {
             if (o.IsEmpty())

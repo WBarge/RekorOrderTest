@@ -16,6 +16,8 @@
   <ItemGroup>
     <Folder Include="DBSchemaHelp\" />
     <Folder Include="Migrations\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Seeding\" />
   </ItemGroup>
 
 </Project>

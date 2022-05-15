@@ -1,4 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿// ***********************************************************************
+// Assembly         : Order.Service
+// Author           : Bill Barge
+// Created          : 05-12-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-12-2022
+// ***********************************************************************
+// <copyright file="UiExceptionHandlerExtensions.cs" company="Order.Service">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Microsoft.AspNetCore.Builder;
 
 namespace Order.Service.Middleware
 {

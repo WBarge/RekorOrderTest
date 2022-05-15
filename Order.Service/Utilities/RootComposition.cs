@@ -1,4 +1,17 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿// ***********************************************************************
+// Assembly         : Order.Service
+// Author           : Bill Barge
+// Created          : 05-15-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-15-2022
+// ***********************************************************************
+// <copyright file="RootComposition.cs" company="Order.Service">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Order.Data.Ef;
@@ -9,8 +22,16 @@ using Order.Business;
 
 namespace Order.Service.Utilities
 {
+    /// <summary>
+    /// Class RootComposition.
+    /// </summary>
     public static class RootComposition
     {
+        /// <summary>
+        /// Configures the di.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <param name="configuration">The configuration.</param>
         public static void ConfigureDi(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContextPool<OrderDbContext>(builder =>
@@ -22,6 +43,7 @@ namespace Order.Service.Utilities
             services.AddTransient<ICustomerRepo,CustomerRepo>();
             services.AddTransient<IOrderRepo, OrderRepo>();
             services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IProductService, ProductService>();
         }
     }
 }

@@ -1,34 +1,33 @@
 ﻿// ***********************************************************************
 // Assembly         : Order.Glue
 // Author           : Bill Barge
-// Created          : 05-13-2022
+// Created          : 05-15-2022
 //
 // Last Modified By : Bill Barge
-// Last Modified On : 05-13-2022
+// Last Modified On : 05-15-2022
 // ***********************************************************************
-// <copyright file="ICustomerRepo.cs" company="Order.Glue">
+// <copyright file="IProductService.cs" company="Order.Glue">
 //     Copyright (c) . All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Order.Glue.Interfaces.DTOs;
 
-namespace Order.Glue.Interfaces.Data
+namespace Order.Glue.Interfaces.Business
 {
     /// <summary>
-    /// Interface ICustomerRepo
+    /// Interface IProductService
     /// </summary>
-    public interface ICustomerRepo
+    public interface IProductService
     {
         /// <summary>
-        /// Gets the customer asynchronous.
+        /// Gets all products by average customer rating asynchronous.
         /// </summary>
-        /// <param name="customerId">The customer identifier.</param>
         /// <param name="token">The token.</param>
-        /// <returns>Task&lt;ICustomer&gt;.</returns>
-        Task<ICustomer> GetCustomerAsync(Guid customerId, CancellationToken token);
+        /// <returns>Task&lt;IEnumerable&lt;IProduct&gt;&gt;.</returns>
+        Task<IEnumerable<IProduct>> GetAllProductsByAverageCustomerRatingAsync(CancellationToken token = default);
     }
 }

@@ -23,16 +23,14 @@ namespace Order.Data.Ef.Configurations
     /// <seealso cref="Order" />
     internal class OrderConfig : IEntityTypeConfiguration<Entities.Order>
     {
-        /// <summary>
-        /// Configures the entity of type <typeparamref name="TEntity" />.
-        /// </summary>
+        /// <summary>Configures the entity of type <span class="typeparameter">TEntity</span>.</summary>
         /// <param name="builder">The builder to be used to configure the entity type.</param>
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Entities.Order> builder)
         {
             builder.ToTable("Order");
             builder.HasKey(k => k.OrderId);
             builder.Property(p => p.OrderId)
-                .IsRequired(true)
+                .IsRequired()
                 .ValueGeneratedOnAdd();
 
             //set 1-many relationships

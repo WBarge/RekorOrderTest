@@ -11,17 +11,19 @@
 // </copyright>
 // <summary>The basic DBContext for the system</summary>
 // ***********************************************************************
+
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Order.Data.Ef.Entities;
+using Order.Data.Ef.Seeding;
 
 namespace Order.Data.Ef
 {
     /// <summary>
     /// Class OrderDbContext.
-    /// Implements the <see cref="Microsoft.EntityFrameworkCore.DbContext" />
+    /// Implements the <see cref="DbContext" />
     /// </summary>
-    /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
+    /// <seealso cref="DbContext" />
     public class OrderDbContext : DbContext
     {
         /// <summary>
@@ -60,7 +62,10 @@ namespace Order.Data.Ef
         {
             //find all classes that implement IEntityTypeConfiguration and execute their Configure method
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            
+         
+            modelBuilder.Seed();
+
+         
         }
     }
 }

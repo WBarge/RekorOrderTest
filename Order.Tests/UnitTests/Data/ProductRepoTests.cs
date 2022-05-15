@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Order.Data.Ef;
@@ -29,7 +31,6 @@ namespace Order.Tests.UnitTests.Data
             Assert.IsNotNull(sut);
         }
 
-
         [Test]
         public void CanGetAProductFromDataStore()
         {
@@ -58,6 +59,45 @@ namespace Order.Tests.UnitTests.Data
             Assert.AreEqual(testData.ProductName, result.ProductName);
             Assert.AreEqual(testData.PricePerItem, result.PricePerItem);
             Assert.AreEqual(testData.AverageCustomerRating, result.AverageCustomerRating);
+        }
+
+        [Test]
+        public void CanGetProductsByAverageCustomerRating()
+        {
+            OrderDbContext dbContext = DataContextCreator.GetContext();
+
+            Product testData = new Product()
+            {
+                ProductName = "name",
+                PricePerItem = 12,
+                AverageCustomerRating = 10
+            };
+
+            dbContext.Products.Add(testData);
+
+            Product testData2= new Product()
+            {
+                ProductName = "name",
+                PricePerItem = 12,
+                AverageCustomerRating = 9
+            };
+
+            dbContext.Products.Add(testData2);
+            dbContext.SaveChanges();
+
+            ProductRepo sut = new ProductRepo(dbContext);
+
+
+            Task<IEnumerable<IProduct>> task = sut.GetAllProductsByAverageCustomerRatingAsync();
+            Task.WaitAll(task);
+            if (task.IsFaulted)
+            {
+                throw task.Exception;
+            }
+
+            IEnumerable<IProduct> result = task.Result;
+            Assert.GreaterOrEqual(result.Count(),2);
+            Assert.AreEqual(testData.ProductId,result.First().ProductId);
         }
     }
 }

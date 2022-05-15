@@ -1,4 +1,17 @@
-﻿using Order.Data.Ef.Entities;
+﻿// ***********************************************************************
+// Assembly         : Order.Data.Ef
+// Author           : Bill Barge
+// Created          : 05-13-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-13-2022
+// ***********************************************************************
+// <copyright file="DataTransformer.cs" company="Order.Data.Ef">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using Order.Data.Ef.Entities;
 using Order.Glue.Interfaces.DTOs;
 
 namespace Order.Data.Ef.Repos
@@ -6,8 +19,16 @@ namespace Order.Data.Ef.Repos
 
     //todo look into a tools such as automapper
 
+    /// <summary>
+    /// Class DataTransformer.
+    /// </summary>
     public class DataTransformer
     {
+        /// <summary>
+        /// Transforms the specified product.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <returns>Product.</returns>
         public static Product Transform(IProduct product)
         {
             if (product is Product)
@@ -26,6 +47,11 @@ namespace Order.Data.Ef.Repos
             }
         }
 
+        /// <summary>
+        /// Transforms the specified customer.
+        /// </summary>
+        /// <param name="customer">The customer.</param>
+        /// <returns>Customer.</returns>
         public static Customer Transform(ICustomer customer)
         {
             if (customer is Customer)

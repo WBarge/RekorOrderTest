@@ -1,4 +1,17 @@
-﻿using System.IO;
+﻿// ***********************************************************************
+// Assembly         : Order.Service
+// Author           : Bill Barge
+// Created          : 05-12-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-12-2022
+// ***********************************************************************
+// <copyright file="UiExceptionHandler.cs" company="Order.Service">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;

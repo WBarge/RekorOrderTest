@@ -12,12 +12,14 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Order.Glue.Exceptions;
 using Order.Glue.Extensions;
 using Order.Glue.Interfaces.Business;
+using Order.Glue.Interfaces.DTOs;
 using Order.Service.Models.Requests;
 using Order.Service.Models.Responses;
 
@@ -25,9 +27,9 @@ namespace Order.Service.Controllers
 {
     /// <summary>
     /// Class OrderController.
-    /// Implements the <see cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
+    /// Implements the <see cref="ControllerBase" />
     /// </summary>
-    /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
+    /// <seealso cref="ControllerBase" />
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
@@ -72,5 +74,21 @@ namespace Order.Service.Controllers
 
             return new OkResult();
         }
+
+        //todo - get updated requirements and refactor if needed - is an order that has shipped still an order or is it an invoice
+        /// <summary>
+        /// Gets all the pending orders
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<IPendingOrder>),StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ErrorMessageForClient),StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorMessageForClient),StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetAsync()
+        {
+            IEnumerable<IPendingOrder> results = await _orderService.GetPendingOrdersAsync();
+            return new OkObjectResult(results);
+        }
+
     }
 }

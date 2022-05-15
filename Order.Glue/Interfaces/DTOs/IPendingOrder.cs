@@ -1,12 +1,12 @@
 ﻿// ***********************************************************************
 // Assembly         : Order.Glue
 // Author           : Bill Barge
-// Created          : 05-13-2022
+// Created          : 05-15-2022
 //
 // Last Modified By : Bill Barge
-// Last Modified On : 05-13-2022
+// Last Modified On : 05-15-2022
 // ***********************************************************************
-// <copyright file="ICustomer.cs" company="Order.Glue">
+// <copyright file="IPendingOrder.cs" company="Order.Glue">
 //     Copyright (c) . All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -16,9 +16,9 @@ using System;
 namespace Order.Glue.Interfaces.DTOs
 {
     /// <summary>
-    /// Interface ICustomer
+    /// Interface IPendingOrder
     /// </summary>
-    public interface ICustomer
+    public interface IPendingOrder
     {
         /// <summary>
         /// Gets or sets the customer identifier.
@@ -33,39 +33,27 @@ namespace Order.Glue.Interfaces.DTOs
         string CustomerName { get; set; }
 
         /// <summary>
-        /// Gets or sets the address line1.
+        /// Gets or sets the order identifier.
         /// </summary>
-        /// <value>The address line1.</value>
-        string AddressLine1 { get; set; }
+        /// <value>The order identifier.</value>
+        Guid OrderId { get; set; }
 
         /// <summary>
-        /// Gets or sets the address line2.
+        /// Gets or sets the order date.
         /// </summary>
-        /// <value>The address line2.</value>
-        string AddressLine2 { get; set; }
+        /// <value>The order date.</value>
+        DateTime OrderDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the city.
+        /// Gets or sets the quantity.
         /// </summary>
-        /// <value>The city.</value>
-        string City { get; set; }
+        /// <value>The quantity.</value>
+        int Quantity { get; set; }
 
         /// <summary>
-        /// Gets or sets the state.
+        /// Gets or sets the price paid.
         /// </summary>
-        /// <value>The state.</value>
-        string State { get; set; }
-
-        /// <summary>
-        /// Gets or sets the zip.
-        /// </summary>
-        /// <value>The zip.</value>
-        string Zip { get; set; }
-
-        /// <summary>
-        /// Gets or sets the country.
-        /// </summary>
-        /// <value>The country.</value>
-        string Country { get; set; }
+        /// <value>The price paid.</value>
+        decimal PricePaid { get; set; }
     }
 }

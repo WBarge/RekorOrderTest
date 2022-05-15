@@ -17,15 +17,16 @@ using Order.Data.Ef.Entities;
 
 namespace Order.Data.Ef.Configurations
 {
+
     /// <summary>
     /// Class CustomerConfig.
-    /// Implements the <see cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Order.Data.Ef.Entities.Customer}" />
+    /// Implements the <see cref="IEntityTypeConfiguration{Customer}" />
     /// </summary>
-    /// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{Order.Data.Ef.Entities.Customer}" />
+    /// <seealso cref="IEntityTypeConfiguration{Customer}" />
     internal class CustomerConfig : IEntityTypeConfiguration<Customer>
     {
         /// <summary>
-        /// Configures the entity of type <typeparamref name="TEntity" />.
+        ///     Configures the entity of type <span class="typeparameter">TEntity</span>.
         /// </summary>
         /// <param name="builder">The builder to be used to configure the entity type.</param>
         public void Configure(EntityTypeBuilder<Customer> builder)
@@ -33,7 +34,7 @@ namespace Order.Data.Ef.Configurations
             builder.ToTable("Customer");
             builder.HasKey(k => k.CustomerId);
             builder.Property(p => p.CustomerId)
-                .IsRequired(true)
+                .IsRequired()
                 .ValueGeneratedOnAdd();
             builder.Property(x => x.CustomerName)
                 .HasColumnType("nvarchar(255)");

@@ -1,7 +1,23 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : Order.Glue
+// Author           : Bill Barge
+// Created          : 05-13-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-13-2022
+// ***********************************************************************
+// <copyright file="IProduct.cs" company="Order.Glue">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 
 namespace Order.Glue.Interfaces.DTOs
 {
+    /// <summary>
+    /// Interface IProduct
+    /// </summary>
     public interface IProduct
     {
         /// <summary>

@@ -1,3 +1,16 @@
+// ***********************************************************************
+// Assembly         : Order.Service
+// Author           : Bill Barge
+// Created          : 05-12-2022
+//
+// Last Modified By : Bill Barge
+// Last Modified On : 05-15-2022
+// ***********************************************************************
+// <copyright file="Startup.cs" company="Order.Service">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
@@ -12,8 +25,15 @@ using Order.Service.Utilities;
 
 namespace Order.Service
 {
+    /// <summary>
+    /// Class Startup.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Startup"/> class.
+        /// </summary>
+        /// <param name="env">The env.</param>
         public Startup(IWebHostEnvironment env)
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
@@ -24,9 +44,17 @@ namespace Order.Service
             Configuration = builder.Build();
         }
 
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
+        /// <value>The configuration.</value>
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// Configures the services.
+        /// </summary>
+        /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -44,6 +72,11 @@ namespace Order.Service
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Configures the specified application.
+        /// </summary>
+        /// <param name="app">The application.</param>
+        /// <param name="env">The env.</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             //configure centralized error handling

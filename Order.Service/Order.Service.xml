@@ -31,6 +31,37 @@
             <returns>IActionResult.</returns>
             <exception cref="T:Order.Glue.Exceptions.RequestException">Quantity has to be a positive number</exception>
         </member>
+        <member name="M:Order.Service.Controllers.OrderController.GetAsync">
+            <summary>
+            Gets all the pending orders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Order.Service.Controllers.ProductController">
+            <summary>
+            Class ProductController.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Order.Service.Controllers.ProductController._productService">
+            <summary>
+            The product service
+            </summary>
+        </member>
+        <member name="M:Order.Service.Controllers.ProductController.#ctor(Order.Glue.Interfaces.Business.IProductService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Controllers.ProductController"/> class.
+            </summary>
+            <param name="productService">The product service.</param>
+            <exception cref="T:System.ArgumentNullException">productService</exception>
+        </member>
+        <member name="M:Order.Service.Controllers.ProductController.GetAsync">
+            <summary>
+            Get all products ordered the average customer rating
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Order.Service.Middleware.UiExceptionHandler">
             <summary>
             Class UiExceptionHandler.
@@ -76,6 +107,29 @@
             <param name="builder">The builder.</param>
             <returns>IApplicationBuilder.</returns>
         </member>
+        <member name="T:Order.Service.Models.Requests.NewOrderRequest">
+            <summary>
+            Class NewOrderRequest.
+            </summary>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewOrderRequest.ProductId">
+            <summary>
+            Gets or sets the product identifier.
+            </summary>
+            <value>The product identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewOrderRequest.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>The customer identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewOrderRequest.Quantity">
+            <summary>
+            Gets or sets the quantity.
+            </summary>
+            <value>The quantity.</value>
+        </member>
         <member name="T:Order.Service.Models.Responses.ErrorMessageForClient">
             <summary>
             Class ErrorMessageForClient.
@@ -103,6 +157,66 @@
             Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.ErrorMessageForClient" /> class.
             </summary>
             <param name="x">The x.</param>
+        </member>
+        <member name="T:Order.Service.Program">
+            <summary>
+            Class Program.
+            </summary>
+        </member>
+        <member name="M:Order.Service.Program.Main(System.String[])">
+            <summary>
+            Defines the entry point of the application.
+            </summary>
+            <param name="args">The arguments.</param>
+        </member>
+        <member name="M:Order.Service.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Creates the host builder.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>IHostBuilder.</returns>
+        </member>
+        <member name="T:Order.Service.Startup">
+            <summary>
+            Class Startup.
+            </summary>
+        </member>
+        <member name="M:Order.Service.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Startup"/> class.
+            </summary>
+            <param name="env">The env.</param>
+        </member>
+        <member name="P:Order.Service.Startup.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>The configuration.</value>
+        </member>
+        <member name="M:Order.Service.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the services.
+            </summary>
+            <param name="services">The services.</param>
+        </member>
+        <member name="M:Order.Service.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configures the specified application.
+            </summary>
+            <param name="app">The application.</param>
+            <param name="env">The env.</param>
+        </member>
+        <member name="T:Order.Service.Utilities.RootComposition">
+            <summary>
+            Class RootComposition.
+            </summary>
+        </member>
+        <member name="M:Order.Service.Utilities.RootComposition.ConfigureDi(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configures the di.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
         </member>
     </members>
 </doc>
