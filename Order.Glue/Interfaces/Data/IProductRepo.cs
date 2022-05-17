@@ -37,5 +37,12 @@ namespace Order.Glue.Interfaces.Data
         /// <param name="token">The token.</param>
         /// <returns>Task&lt;IEnumerable&lt;IProduct&gt;&gt;.</returns>
         Task<IEnumerable<IProduct>> GetAllProductsByAverageCustomerRatingAsync(CancellationToken token = default);
+        /// <summary>
+        /// Inserts the asynchronous.
+        /// </summary>
+        /// <param name="rec">The record.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>System.Threading.Tasks.Task.</returns>
+        Task InsertAsync(IProduct rec, CancellationToken cancellationToken = default);
     }
 }

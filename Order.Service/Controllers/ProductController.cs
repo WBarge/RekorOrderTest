@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -60,9 +61,9 @@ namespace Order.Service.Controllers
         [ProducesResponseType(typeof(ErrorMessageForClient),StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetAsync()
         {
-            //todo - refactor to return a response object
             IEnumerable<IProduct> results = await _productService.GetAllProductsByAverageCustomerRatingAsync();
-            return new OkObjectResult(results);
+            List<IProduct> returnValue = results.Select(product => new Product(product)).Cast<IProduct>().ToList();
+            return new OkObjectResult(returnValue);
         }
     }
 }

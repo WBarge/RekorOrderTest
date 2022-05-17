@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Order.Glue.Interfaces.Data;
 using Order.Glue.Interfaces.DTOs;
+using Product = Order.Data.Ef.Entities.Product;
 
 namespace Order.Data.Ef.Repos
 {
@@ -63,6 +64,31 @@ namespace Order.Data.Ef.Repos
         public async Task<IEnumerable<IProduct>> GetAllProductsByAverageCustomerRatingAsync(CancellationToken token = default)
         {
             return  await _dbContext.Products.OrderByDescending(p => p.AverageCustomerRating).ToListAsync();
+        }
+
+        /// <summary>
+        /// insert as an asynchronous operation.
+        /// </summary>
+        /// <param name="rec">The record.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        public async Task InsertAsync(IProduct rec,CancellationToken cancellationToken =default)
+        {
+            await Task.Run(async () =>
+            {
+                Product recToInsert;
+                if (rec is Product services)
+                {
+                    recToInsert = services;
+                }
+                else
+                {
+                    recToInsert = MSSqlDataTransformer.ConvertToProduct(rec);
+                }
+
+                _dbContext.Products.Add(recToInsert);
+                await _dbContext.SaveChangesAsync(cancellationToken);
+
+            }, cancellationToken).ConfigureAwait(false);
         }
     }
 }

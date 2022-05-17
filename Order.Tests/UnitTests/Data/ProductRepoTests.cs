@@ -99,5 +99,32 @@ namespace Order.Tests.UnitTests.Data
             Assert.GreaterOrEqual(result.Count(),2);
             Assert.AreEqual(testData.ProductId,result.First().ProductId);
         }
+
+        [Test]
+        public void CanAddAProductToDataStore()
+        {
+            OrderDbContext dbContext = DataContextCreator.GetContext();
+
+            Product testData = new Product()
+            {
+                ProductName = "name",
+                PricePerItem = 12,
+                AverageCustomerRating = 10
+            };
+
+            ProductRepo sut = new ProductRepo(dbContext);
+            Task task = sut.InsertAsync(testData);
+            Task.WaitAll(task);
+            if (task.IsFaulted)
+            {
+                throw task.Exception;
+            }
+
+            var result=dbContext.Products.FirstOrDefault();
+            Assert.AreEqual(testData.ProductName, result.ProductName);
+            Assert.AreEqual(testData.PricePerItem, result.PricePerItem);
+            Assert.AreEqual(testData.AverageCustomerRating, result.AverageCustomerRating);
+
+        }
     }
 }

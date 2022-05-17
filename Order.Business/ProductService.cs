@@ -52,5 +52,16 @@ namespace Order.Business
         {
             return _productRepo.GetAllProductsByAverageCustomerRatingAsync(token);
         }
+
+        /// <summary>
+        /// add product as an asynchronous operation.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>Task.</returns>
+        public async Task AddProductAsync(IProduct product,CancellationToken token = default)
+        {
+            await _productRepo.InsertAsync(product, token);
+        }
     }
 }

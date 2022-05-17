@@ -158,6 +158,37 @@
             </summary>
             <param name="x">The x.</param>
         </member>
+        <member name="T:Order.Service.Models.Responses.Product">
+            <summary>
+            Class Product.
+            Implements the <see cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
+            </summary>
+            <seealso cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
+        </member>
+        <member name="P:Order.Service.Models.Responses.Product.ProductId">
+            <summary>
+            Gets or sets the product identifier.
+            </summary>
+            <value>The product identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.Product.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+            <value>The name of the product.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.Product.PricePerItem">
+            <summary>
+            Gets or sets the price per item.
+            </summary>
+            <value>The price per item.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.Product.AverageCustomerRating">
+            <summary>
+            Gets or sets the average customer rating.
+            </summary>
+            <value>The average customer rating.</value>
+        </member>
         <member name="T:Order.Service.Program">
             <summary>
             Class Program.

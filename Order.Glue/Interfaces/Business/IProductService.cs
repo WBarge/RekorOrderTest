@@ -29,5 +29,14 @@ namespace Order.Glue.Interfaces.Business
         /// <param name="token">The token.</param>
         /// <returns>Task&lt;IEnumerable&lt;IProduct&gt;&gt;.</returns>
         Task<IEnumerable<IProduct>> GetAllProductsByAverageCustomerRatingAsync(CancellationToken token = default);
+
+        /// <summary>
+        /// Adds the product asynchronous.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>Task.</returns>
+        Task AddProductAsync(IProduct product, CancellationToken token = default);
+
     }
 }
