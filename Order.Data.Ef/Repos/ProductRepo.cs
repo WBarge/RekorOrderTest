@@ -63,7 +63,7 @@ namespace Order.Data.Ef.Repos
         /// <returns>IEnumerable&lt;IProduct&gt;.</returns>
         public async Task<IEnumerable<IProduct>> GetAllProductsByAverageCustomerRatingAsync(CancellationToken token = default)
         {
-            return  await _dbContext.Products.OrderByDescending(p => p.AverageCustomerRating).ToListAsync();
+            return  await _dbContext.Products.OrderByDescending(p => p.AverageCustomerRating).ToListAsync(token);
         }
 
         /// <summary>

@@ -4,9 +4,6 @@ import { MessageService } from 'primeng/api';
 import { ErrorHandler } from 'src/app/helpers/error-handler';
 import { ProductServiceService } from 'src/app/services/product-service.service';
 
-import { HttpResponse } from '@angular/common/http';
-import { ProductParser } from 'src/app/models/parsers/product-parser';
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.html',
@@ -28,8 +25,7 @@ export class Products implements OnInit {
       if (this.newProduct === null){
         this.newProduct = new Product();
       }
-      
-  this.loadProducts();
+      this.loadProducts();
     }
 
     private loadProducts() {

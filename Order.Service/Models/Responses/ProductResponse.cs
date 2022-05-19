@@ -22,7 +22,7 @@ namespace Order.Service.Models.Responses
     /// Implements the <see cref="Order.Glue.Interfaces.DTOs.IProduct" />
     /// </summary>
     /// <seealso cref="Order.Glue.Interfaces.DTOs.IProduct" />
-    public class Product :IProduct
+    public class ProductResponse :IProduct
     {
         /// <summary>
         /// Gets or sets the product identifier.
@@ -50,10 +50,10 @@ namespace Order.Service.Models.Responses
         public int AverageCustomerRating { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Product"/> class.
+        /// Initializes a new instance of the <see cref="ProductResponse"/> class.
         /// </summary>
         /// <param name="p">The p.</param>
-        public Product(IProduct p)
+        public ProductResponse(IProduct p)
         {
             ProductId = p.ProductId;
             ProductName = p.ProductName;

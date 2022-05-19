@@ -12,12 +12,14 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Order.Glue.Interfaces.Data;
 using Order.Glue.Interfaces.DTOs;
+using Customer = Order.Data.Ef.Entities.Customer;
 
 namespace Order.Data.Ef.Repos
 {
@@ -53,6 +55,39 @@ namespace Order.Data.Ef.Repos
         public async Task<ICustomer> GetCustomerAsync(Guid customerId, CancellationToken token=default)
         {
             return await _dbContext.Customers.Where(c => c.CustomerId == customerId).FirstOrDefaultAsync(token);
+        }
+
+        /// <summary>Gets the name of all customers by.</summary>
+        /// <param name="token">The token.</param>
+        /// <returns>IEnumerable&lt;ICustomer&gt;.</returns>
+        public async Task<IEnumerable<ICustomer>> GetAllCustomersByNameAsync(CancellationToken token = default)
+        {
+            return await _dbContext.Customers.OrderByDescending(c => c.CustomerName).ToListAsync(token);
+        }
+
+        /// <summary>
+        /// insert as an asynchronous operation.
+        /// </summary>
+        /// <param name="rec">The record.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        public async Task InsertAsync(ICustomer rec,CancellationToken cancellationToken =default)
+        {
+            await Task.Run(async () =>
+            {
+                Customer recToInsert;
+                if (rec is Customer services)
+                {
+                    recToInsert = services;
+                }
+                else
+                {
+                    recToInsert = MSSqlDataTransformer.ConvertToCustomer(rec);
+                }
+
+                _dbContext.Customers.Add(recToInsert);
+                await _dbContext.SaveChangesAsync(cancellationToken);
+
+            }, cancellationToken).ConfigureAwait(false);
         }
     }
 }

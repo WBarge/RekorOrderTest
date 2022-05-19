@@ -1,1 +1,37 @@
-<p>customer works!</p>
+<p-table #customerTable [value]="customerList" [rows]="10" [paginator]="true">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>
+                <button type="button" pButton (click)="clickNewCustomerDialog()" label="Add Customer"></button>
+            </th>
+            <th>Name</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Country</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customer>
+      <tr>
+          <td></td>
+          <td>{{customer.customerName}}</td>
+          <td>{{customer.addressLine1}}</td>
+          <td>{{customer.addressLine2}}</td>
+          <td>{{customer.city}}</td>
+          <td>{{customer.state}}</td>
+          <td>{{customer.zip}}</td>
+          <td>{{customer.country}}</td>
+      </tr>
+  </ng-template>
+  </p-table>
+  
+  <p-dialog header="Create New Customer" [(visible)]="showNewCustomerDialog" [modal]="true" [closable]="true" width="800">
+    <app-customer [CustomerData]="newCustomer"></app-customer>
+    <p-footer>
+        <button type="button" pButton (click)="createNewCustomerDialogClick()" label="Create Customer"></button>
+    </p-footer>
+  </p-dialog>
+  
+  

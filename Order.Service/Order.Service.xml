@@ -4,6 +4,38 @@
         <name>Order.Service</name>
     </assembly>
     <members>
+        <member name="T:Order.Service.Controllers.CustomerController">
+            <summary>
+            Class CustomerController.
+            Implements the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+            </summary>
+            <seealso cref="T:Microsoft.AspNetCore.Mvc.ControllerBase" />
+        </member>
+        <member name="F:Order.Service.Controllers.CustomerController._customerService">
+            <summary>
+            The customer service
+            </summary>
+        </member>
+        <member name="M:Order.Service.Controllers.CustomerController.#ctor(Order.Glue.Interfaces.Business.ICustomerService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Controllers.CustomerController"/> class.
+            </summary>
+            <param name="customerService">The customer service.</param>
+            <exception cref="T:System.ArgumentNullException">customerService</exception>
+        </member>
+        <member name="M:Order.Service.Controllers.CustomerController.GetAsync">
+            <summary>
+            get as an asynchronous operation.
+            </summary>
+            <returns>IActionResult.</returns>
+        </member>
+        <member name="M:Order.Service.Controllers.CustomerController.Post(Order.Service.Models.Requests.NewCustomerRequest)">
+            <summary>
+            Posts the specified request.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>IActionResult.</returns>
+        </member>
         <member name="T:Order.Service.Controllers.OrderController">
             <summary>
             Class OrderController.
@@ -115,6 +147,61 @@
             <param name="builder">The builder.</param>
             <returns>IApplicationBuilder.</returns>
         </member>
+        <member name="T:Order.Service.Models.Requests.NewCustomerRequest">
+            <summary>
+            Class NewCustomerRequest.
+            Implements the <see cref="T:Order.Glue.Interfaces.DTOs.ICustomer" />
+            </summary>
+            <seealso cref="T:Order.Glue.Interfaces.DTOs.ICustomer" />
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>The customer identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.CustomerName">
+            <summary>
+            Gets or sets the name of the customer.
+            </summary>
+            <value>The name of the customer.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.AddressLine1">
+            <summary>
+            Gets or sets the address line1.
+            </summary>
+            <value>The address line1.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.AddressLine2">
+            <summary>
+            Gets or sets the address line2.
+            </summary>
+            <value>The address line2.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.Zip">
+            <summary>
+            Gets or sets the zip.
+            </summary>
+            <value>The zip.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewCustomerRequest.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+        </member>
         <member name="T:Order.Service.Models.Requests.NewOrderRequest">
             <summary>
             Class NewOrderRequest.
@@ -169,6 +256,67 @@
             </summary>
             <value>The average customer rating.</value>
         </member>
+        <member name="T:Order.Service.Models.Responses.CustomerResponse">
+            <summary>
+            Class Customer.
+            Implements the <see cref="T:Order.Glue.Interfaces.DTOs.ICustomer" />
+            </summary>
+            <seealso cref="T:Order.Glue.Interfaces.DTOs.ICustomer" />
+        </member>
+        <member name="M:Order.Service.Models.Responses.CustomerResponse.#ctor(Order.Glue.Interfaces.DTOs.ICustomer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.CustomerResponse"/> class.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.CustomerId">
+            <summary>
+            Gets or sets the customer identifier.
+            </summary>
+            <value>The customer identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.CustomerName">
+            <summary>
+            Gets or sets the name of the customer.
+            </summary>
+            <value>The name of the customer.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.AddressLine1">
+            <summary>
+            Gets or sets the address line1.
+            </summary>
+            <value>The address line1.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.AddressLine2">
+            <summary>
+            Gets or sets the address line2.
+            </summary>
+            <value>The address line2.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.Zip">
+            <summary>
+            Gets or sets the zip.
+            </summary>
+            <value>The zip.</value>
+        </member>
+        <member name="P:Order.Service.Models.Responses.CustomerResponse.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+        </member>
         <member name="T:Order.Service.Models.Responses.ErrorMessageForClient">
             <summary>
             Class ErrorMessageForClient.
@@ -197,40 +345,40 @@
             </summary>
             <param name="x">The x.</param>
         </member>
-        <member name="T:Order.Service.Models.Responses.Product">
+        <member name="T:Order.Service.Models.Responses.ProductResponse">
             <summary>
             Class Product.
             Implements the <see cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
             </summary>
             <seealso cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
         </member>
-        <member name="P:Order.Service.Models.Responses.Product.ProductId">
+        <member name="P:Order.Service.Models.Responses.ProductResponse.ProductId">
             <summary>
             Gets or sets the product identifier.
             </summary>
             <value>The product identifier.</value>
         </member>
-        <member name="P:Order.Service.Models.Responses.Product.ProductName">
+        <member name="P:Order.Service.Models.Responses.ProductResponse.ProductName">
             <summary>
             Gets or sets the name of the product.
             </summary>
             <value>The name of the product.</value>
         </member>
-        <member name="P:Order.Service.Models.Responses.Product.PricePerItem">
+        <member name="P:Order.Service.Models.Responses.ProductResponse.PricePerItem">
             <summary>
             Gets or sets the price per item.
             </summary>
             <value>The price per item.</value>
         </member>
-        <member name="P:Order.Service.Models.Responses.Product.AverageCustomerRating">
+        <member name="P:Order.Service.Models.Responses.ProductResponse.AverageCustomerRating">
             <summary>
             Gets or sets the average customer rating.
             </summary>
             <value>The average customer rating.</value>
         </member>
-        <member name="M:Order.Service.Models.Responses.Product.#ctor(Order.Glue.Interfaces.DTOs.IProduct)">
+        <member name="M:Order.Service.Models.Responses.ProductResponse.#ctor(Order.Glue.Interfaces.DTOs.IProduct)">
             <summary>
-            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.Product"/> class.
+            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.ProductResponse"/> class.
             </summary>
             <param name="p">The p.</param>
         </member>

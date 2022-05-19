@@ -7,14 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 //application
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Customers } from './views/customer/customers';
 import { Products } from './views/product/products';
+import { Customers } from './views/customer/customers';
 import { Orders } from './views/order/orders';
 import { ServiceLocationService } from './services/service-location-service';
 import { ProductServiceService } from './services/product-service.service';
 import { ErrorHandler } from './helpers/error-handler';
-
+import { CustomerServiceService } from './services/customer-service.service';
 import { ProductComponent } from './components/product/product.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 //Third party imports
 import { InputTextModule } from 'primeng/inputtext';
@@ -37,7 +38,6 @@ import { CalendarModule } from 'primeng/calendar';
 import { SpinnerModule } from 'primeng/spinner';
 import { RippleModule } from 'primeng/ripple';
 import {MessageService} from 'primeng/api';
-import { CustomerComponent } from './components/customer/customer.component';
 
 
 @NgModule({
@@ -78,6 +78,7 @@ import { CustomerComponent } from './components/customer/customer.component';
     MessageService,
     ServiceLocationService,
     ProductServiceService,
+    CustomerServiceService,
     ErrorHandler
   ],
   bootstrap: [AppComponent]

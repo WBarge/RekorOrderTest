@@ -44,6 +44,8 @@ namespace Order.Service.Utilities
             services.AddTransient<IOrderRepo, OrderRepo>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ICustomerService, CustomerService>();
         }
     }
 }

@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Order.Glue.Interfaces.DTOs;
@@ -30,5 +31,19 @@ namespace Order.Glue.Interfaces.Data
         /// <param name="token">The token.</param>
         /// <returns>Task&lt;ICustomer&gt;.</returns>
         Task<ICustomer> GetCustomerAsync(Guid customerId, CancellationToken token);
+
+        /// <summary>
+        /// Gets all customers by name asynchronous.
+        /// </summary>
+        /// <param name="token">The token.</param>
+        /// <returns>Task&lt;IEnumerable&lt;ICustomer&gt;&gt;.</returns>
+        Task<IEnumerable<ICustomer>> GetAllCustomersByNameAsync(CancellationToken token = default);
+        /// <summary>
+        /// Inserts the asynchronous.
+        /// </summary>
+        /// <param name="rec">The record.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Task.</returns>
+        Task InsertAsync(ICustomer rec, CancellationToken cancellationToken = default);
     }
 }

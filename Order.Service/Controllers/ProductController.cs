@@ -64,7 +64,7 @@ namespace Order.Service.Controllers
         public async Task<IActionResult> GetAsync()
         {
             IEnumerable<IProduct> results = await _productService.GetAllProductsByAverageCustomerRatingAsync();
-            List<IProduct> returnValue = results.Select(product => new Product(product)).Cast<IProduct>().ToList();
+            List<IProduct> returnValue = results.Select(product => new ProductResponse(product)).Cast<IProduct>().ToList();
             return new OkObjectResult(returnValue);
         }
 

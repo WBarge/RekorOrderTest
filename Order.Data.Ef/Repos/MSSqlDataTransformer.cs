@@ -29,5 +29,20 @@ namespace Order.Data.Ef
                 AverageCustomerRating = rec.AverageCustomerRating
             };
         }
+
+        public static Customer ConvertToCustomer(ICustomer rec)
+        {
+            return new Customer
+            {
+                CustomerId = rec.CustomerId,
+                CustomerName = rec.CustomerName,
+                AddressLine1 = rec.AddressLine1,
+                AddressLine2 = rec.AddressLine2,
+                City = rec.City,
+                State = rec.State,
+                Zip = rec.Zip,
+                Country = rec.Country
+            };
+        }
     }
 }
