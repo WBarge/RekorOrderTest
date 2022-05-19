@@ -26,3 +26,5 @@ Order.Service/obj/
 Order.Tests/bin/
 
 Order.Tests/obj/
+
+UI/order-app/order/node_modules/
