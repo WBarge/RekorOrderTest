@@ -1,12 +1,12 @@
 ﻿// ***********************************************************************
 // Assembly         : Order.Service
 // Author           : Bill Barge
-// Created          : 05-17-2022
+// Created          : 05-19-2022
 //
 // Last Modified By : Bill Barge
-// Last Modified On : 05-17-2022
+// Last Modified On : 05-19-2022
 // ***********************************************************************
-// <copyright file="Product.cs" company="Order.Service">
+// <copyright file="NewProductRequest.cs" company="Order.Service">
 //     Copyright (c) . All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -15,14 +15,14 @@ using System;
 using Newtonsoft.Json;
 using Order.Glue.Interfaces.DTOs;
 
-namespace Order.Service.Models.Responses
+namespace Order.Service.Models.Requests
 {
     /// <summary>
-    /// Class Product.
+    /// Class NewProductRequest.
     /// Implements the <see cref="Order.Glue.Interfaces.DTOs.IProduct" />
     /// </summary>
     /// <seealso cref="Order.Glue.Interfaces.DTOs.IProduct" />
-    public class Product :IProduct
+    public class NewProductRequest: IProduct
     {
         /// <summary>
         /// Gets or sets the product identifier.
@@ -48,17 +48,5 @@ namespace Order.Service.Models.Responses
         /// <value>The average customer rating.</value>
         [JsonProperty(PropertyName = "averageCustomerRating")]
         public int AverageCustomerRating { get; set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Product"/> class.
-        /// </summary>
-        /// <param name="p">The p.</param>
-        public Product(IProduct p)
-        {
-            ProductId = p.ProductId;
-            ProductName = p.ProductName;
-            PricePerItem = p.PricePerItem;
-            AverageCustomerRating = p.AverageCustomerRating;
-        }
     }
 }

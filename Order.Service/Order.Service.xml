@@ -62,6 +62,14 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Order.Service.Controllers.ProductController.PostAsync(Order.Service.Models.Requests.NewProductRequest)">
+            <summary>
+            adds a product to the system
+            </summary>
+            <param name="request">The request.</param>
+            <returns>IActionResult.</returns>
+            <exception cref="T:Order.Glue.Exceptions.RequestException">AverageCustomerRating has to be a positive number</exception>
+        </member>
         <member name="T:Order.Service.Middleware.UiExceptionHandler">
             <summary>
             Class UiExceptionHandler.
@@ -130,6 +138,37 @@
             </summary>
             <value>The quantity.</value>
         </member>
+        <member name="T:Order.Service.Models.Requests.NewProductRequest">
+            <summary>
+            Class NewProductRequest.
+            Implements the <see cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
+            </summary>
+            <seealso cref="T:Order.Glue.Interfaces.DTOs.IProduct" />
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewProductRequest.ProductId">
+            <summary>
+            Gets or sets the product identifier.
+            </summary>
+            <value>The product identifier.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewProductRequest.ProductName">
+            <summary>
+            Gets or sets the name of the product.
+            </summary>
+            <value>The name of the product.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewProductRequest.PricePerItem">
+            <summary>
+            Gets or sets the price per item.
+            </summary>
+            <value>The price per item.</value>
+        </member>
+        <member name="P:Order.Service.Models.Requests.NewProductRequest.AverageCustomerRating">
+            <summary>
+            Gets or sets the average customer rating.
+            </summary>
+            <value>The average customer rating.</value>
+        </member>
         <member name="T:Order.Service.Models.Responses.ErrorMessageForClient">
             <summary>
             Class ErrorMessageForClient.
@@ -188,6 +227,12 @@
             Gets or sets the average customer rating.
             </summary>
             <value>The average customer rating.</value>
+        </member>
+        <member name="M:Order.Service.Models.Responses.Product.#ctor(Order.Glue.Interfaces.DTOs.IProduct)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Order.Service.Models.Responses.Product"/> class.
+            </summary>
+            <param name="p">The p.</param>
         </member>
         <member name="T:Order.Service.Program">
             <summary>

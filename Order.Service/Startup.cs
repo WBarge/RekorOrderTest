@@ -57,7 +57,12 @@ namespace Order.Service
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(o => o.AddPolicy("DataAccess", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -89,6 +94,8 @@ namespace Order.Service
             }
 
             app.UseRouting();
+
+            app.UseCors("DataAccess");
 
             app.UseAuthorization();
 

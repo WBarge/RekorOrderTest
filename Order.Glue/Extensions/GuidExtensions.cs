@@ -42,5 +42,15 @@ namespace Order.Glue.Extensions
                 throw new RequiredObjectException(msg);
             }
         }
+
+        public static void RequiredEmpty(this Guid o, string name = "")
+        {
+            if (o.IsNotEmpty())
+            {
+                string msg = name.IsEmpty() ? "" : $"{name} is required to be empty";
+                throw new RequiredObjectException(msg);
+
+            }
+        }
     }
 }

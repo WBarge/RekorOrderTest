@@ -64,6 +64,7 @@ namespace Order.Data.Ef
             //find all classes that implement IEntityTypeConfiguration and execute their Configure method
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
          
+            //TODO - find out why the db is not been seeded
             modelBuilder.Seed();
 
          
