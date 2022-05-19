@@ -1,0 +1,28 @@
+<p-table #productTable [value]="productList" [rows]="10" [paginator]="true">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>
+              <button type="button" pButton (click)="clickNewProductDialog()" label="Add"></button>
+          </th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Rating</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+        <td></td>
+        <td>{{product.productName}}</td>
+        <td>{{product.pricePerItem}}</td>
+        <td>{{product.averageCustomerRating}}</td>
+    </tr>
+</ng-template>
+</p-table>
+
+<p-dialog header="Create New Product" [(visible)]="showNewProductDialog" [modal]="true" [closable]="true" width="800">
+  <app-product [ProductData]="newProduct"></app-product>
+  <p-footer>
+      <button type="button" pButton (click)="createNewProductDialogClick()" label="Create Product"></button>
+  </p-footer>
+</p-dialog>
+
