@@ -16,7 +16,7 @@
   <br/>
   <div class="p-field p-col-12 p-md-4">
     <span class="p-float-label">
-      <input id="averageCustomerRatingInput" type="number" [(ngModel)]="data.averageCustomerRating" min="0" step="1" /> <!--this works in Chrome but not in Firefox TODO:work on cross browser support-->
+      <input id="averageCustomerRatingInput" type="number" [(ngModel)]="data.averageCustomerRating" min="0" max="10" step="1" /> <!--this works in Chrome but not in Firefox TODO:work on cross browser support-->
       <label for="averageCustomerRatingInput">Rating</label>
     </span>
   </div>

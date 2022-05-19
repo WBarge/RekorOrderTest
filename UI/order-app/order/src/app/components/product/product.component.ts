@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 
 @Component({
@@ -6,18 +6,12 @@ import { Product } from 'src/app/models/product';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
   @Input('ProductData')   data!: Product;
 
   constructor() {
-    if (this.data === null)
-    {
-      this.data = new Product();
-    }
    }
 
-  ngOnInit(): void {
-  }
 
 }

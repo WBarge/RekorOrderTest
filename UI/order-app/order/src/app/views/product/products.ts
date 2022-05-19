@@ -10,7 +10,7 @@ import { ProductParser } from 'src/app/models/parsers/product-parser';
 @Component({
   selector: 'app-products',
   templateUrl: './products.html',
-  styleUrls: ['./products.css']
+  styleUrls: ['./products.css'],
 })
 export class Products implements OnInit {
     //data for the grid
@@ -25,21 +25,27 @@ export class Products implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.loadProducts();
+      if (this.newProduct === null){
+        this.newProduct = new Product();
+      }
+      
+  this.loadProducts();
     }
 
     private loadProducts() {
         this.messageService.add({ severity: 'info', summary: 'System Message', detail: 'Loading Products' });
-        this.productService.getProducts().subscribe((dataset: Product[])=>{
-          this.productList = dataset;
-          this.messageService.clear;
-        },
-        e=>this.handleError(e));
+        this.productService.getProducts().subscribe(
+          {
+            next: (dataset: Product[])=> {
+              this.productList = dataset;
+              this.messageService.clear;
+            },
+            error: e=>this.handleError(e)
+        });
     }
 
     public clickNewProductDialog() {
-        if (this.newProduct == null)
-            this.newProduct = new Product("","",0,0);
+        this.newProduct = new Product();
         this.showNewProductDialog = true;
     }
 
@@ -47,9 +53,10 @@ export class Products implements OnInit {
       this.messageService.add({ severity: 'info', summary: 'System Message', detail: 'Adding Product' });
         const productToUpload: Product = this.newProduct;
         this.productService.setProduct(productToUpload).subscribe(
-            () => this.loadProducts(),
-            error => this.handleError(error)
-        );
+        {
+          next: () => this.loadProducts(),
+          error: (e:any)=>this.handleError(e)
+        });
         this.showNewProductDialog = false;
     }
 

@@ -28,3 +28,9 @@ Order.Tests/bin/
 Order.Tests/obj/
 
 UI/order-app/order/node_modules/
+
+UI/order-app/order/.angular/
+
+UI/order-app/order/.vscode/
+
+UI/order-app/order/dist/

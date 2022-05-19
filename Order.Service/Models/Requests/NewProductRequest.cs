@@ -28,7 +28,7 @@ namespace Order.Service.Models.Requests
         /// Gets or sets the product identifier.
         /// </summary>
         /// <value>The product identifier.</value>
-        [JsonProperty(PropertyName = "productId")]
+        [JsonIgnore]
         public Guid ProductId { get; set; }
         /// <summary>
         /// Gets or sets the name of the product.
