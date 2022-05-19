@@ -1,45 +1,27 @@
-﻿# RekorOrder
-Limited order application for Rekor
+# Order
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
 
+## Development server
 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Code Challenge
+## Code scaffolding
 
-Customer Orders
-	Objective of this technical exercise is to create a .NET solution with Web APIs in order to manage customer orders.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Consider the following tables/entities for your APIs. Feel free to create in-memory lists/data source in
-the application or SQL Server to handle your data inserts/retrieval. Stage required data for your APIs.
+## Build
 
-Tables/Entities
-1. Customer
-	a. Customer Model
-		i. CustomerId, CustomerName, AddressLine1, AddressLine2, City, State, Zip,
-Country
-2. Order
-	a. Order Model
-		i. OrderId, ProductId, CustomerId, OrderDate, Quantity, PricePaid, ShippedDate
-3. Product
-	a. Product Model
-		i. ProductId, ProductName, PricePerItem, AverageCustomerRating
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Design the following APIs to add/return the following details in JSON format:
-	Api 1: Insert customer order details to the ‘Order’ table.
-	Api 2: Get all the pending orders which are not yet shipped to the customers.
-		• Response
-			▪ CustomerId, CustomerName, OrderId, OrderDate, Quantity, PricePaid
-	Api 3: Get the list of products with AverageCustomerRating in the order of highest to lowest ratings.
-		• Response
-			▪ ProductId, ProductName, PricePerItem, AverageCustomerRating
+## Running unit tests
 
-Design standards and expected solution:
-1. Recommended technologies: .NET Core, Entity Core Framework & angular 9+.
-2. Build your own appropriate UI using Angular 9+.
-3. Follow the best practices.
-4. Provide API paths for all the APIs along with parameters (if required)
-5. Add necessary error handlers in your APIs.
-6. Add supporting comments in each API.
-7. Feel free to search online or use any out of the box features you would like to use.
-8. Zip the final solution/project files and share it on a public drive (ex: google drive, Dropbox etc.)
-or use share using personal GitHub account.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
