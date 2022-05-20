@@ -1,0 +1,18 @@
+<br/>
+<div class="p-fluid p-grid">
+  <div class="p-field p-col-12 p-md-4">
+    <p-dropdown id="productNameInput" appendTo="body" [options]="productList" [(ngModel)]="data.productId" optionLabel="productName" optionValue="productId" [filter]="true" filterBy="productName" [showClear]="true" placeholder="Select a Product" [virtualScroll]="true"></p-dropdown>
+  </div>
+  <br/>
+  <div class="p-field p-col-12 p-md-4">
+    <p-dropdown id="customerNameInput" appendTo="body" [options]="customerList" [(ngModel)]="data.customerId" optionLabel="customerName" optionValue="customerId" [filter]="true" filterBy="customerName" [showClear]="true" placeholder="Select a Customer" [virtualScroll]="true"></p-dropdown>
+  </div>
+  <br/>
+  <div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+      <input id="quantityInput" type="number" [(ngModel)]="data.quantity" min="0" step="1" /> <!--this works in Chrome but not in Firefox TODO:work on cross browser support-->
+      <label for="quantityInput">Quantity</label>
+    </span>
+  </div>
+</div>
+

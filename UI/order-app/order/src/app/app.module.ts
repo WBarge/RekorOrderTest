@@ -12,6 +12,7 @@ import { Customers } from './views/customer/customers';
 import { Orders } from './views/order/orders';
 import { ServiceLocationService } from './services/service-location-service';
 import { ProductServiceService } from './services/product-service.service';
+import { OrderServiceService } from './services/order-service.service';
 import { ErrorHandler } from './helpers/error-handler';
 import { CustomerServiceService } from './services/customer-service.service';
 import { ProductComponent } from './components/product/product.component';
@@ -38,6 +39,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { SpinnerModule } from 'primeng/spinner';
 import { RippleModule } from 'primeng/ripple';
 import {MessageService} from 'primeng/api';
+import { OrderComponent } from './components/order/order.component';
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import {MessageService} from 'primeng/api';
     Products,
     Orders,
     ProductComponent,
-    CustomerComponent
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
@@ -79,6 +82,7 @@ import {MessageService} from 'primeng/api';
     ServiceLocationService,
     ProductServiceService,
     CustomerServiceService,
+    OrderServiceService,
     ErrorHandler
   ],
   bootstrap: [AppComponent]
